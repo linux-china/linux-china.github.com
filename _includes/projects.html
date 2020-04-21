@@ -3,7 +3,7 @@
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Pinned GitHub repositories</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
   {% for repository in site.github.public_repositories %}
-  {% if repository.name == 'awesome-rsocket' %}
+  {% if repository.name == 'awesome-rsocket' || repository.name == 'zipkin-rsocket-server' %}
   <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
     {% include repo-card.html %}
   </div>
