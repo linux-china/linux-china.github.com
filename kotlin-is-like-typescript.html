@@ -1,89 +1,89 @@
 <!DOCTYPE html><html><head><title>Kotlin is like TypeScript</title><meta charset="utf-8"><style>body {
-  font-family: "Helvetica Neue", sans-serif;
-  margin: 0;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
 }
 
 body * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .section {
-  background-color: #f4f4f4;
-  padding: 4em 3em;
+    background-color: #f4f4f4;
+    padding: 4em 3em;
 }
 
 .section:nth-child(2n) {
-  background-color: white;
+    background-color: white;
 }
 
 .title {
-  font-size: 2.7em;
-  color: #888;
-  font-weight: 100;
-  letter-spacing: 0.2em;
-  text-align: center;
+    font-size: 2.7em;
+    color: #888;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    text-align: center;
 }
 
 .case {}
 
 .name {
-  font-size: 1.8em;
-  color: #444;
-  font-weight: 300;
-  text-align: center;
-  margin: 60px;
+    font-size: 1.8em;
+    color: #444;
+    font-weight: 300;
+    text-align: center;
+    margin: 60px;
 }
 
 .pair {
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  justify-content: center;
-  -webkit-justify-content: center;
-  -ms-box-pack: center;
-  -ms-box-align: center;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-box-pack: center;
+    -ms-box-align: center;
 }
 
 .card {
-  flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  max-width: 590px;
-  margin: 0 10px;
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    max-width: 590px;
+    margin: 0 10px;
 }
 
 .lang {
-  font-size: 1.3em;
-  color: #666;
-  padding-bottom: 0;
-  font-weight: 200;
-  letter-spacing: 0.07em;
+    font-size: 1.3em;
+    color: #666;
+    padding-bottom: 0;
+    font-weight: 200;
+    letter-spacing: 0.07em;
 }
 
 .code {
-  font-size: 1.15em;
-  background-color: white;
-  margin: 0.4em 0 0 0;
-  padding: 0.4em;
-  line-height: 1.3em;
+    font-size: 1.15em;
+    background-color: white;
+    margin: 0.4em 0 0 0;
+    padding: 0.4em;
+    line-height: 1.3em;
 }
 .section:nth-child(2n) .code {
-  background-color: #f4f4f4;
+    background-color: #f4f4f4;
 }
 
 #fork-me {
-  position: absolute;
-  right: 0;
+    position: absolute;
+    right: 0;
 }
 
 #note {
-  font-size: 1.5em;
-  color: #fff;
-  text-align: center;
-  padding: 0.6em;
-  background: #414141;
-  font-weight: 300;
-  letter-spacing: 0.05em;
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    padding: 0.6em;
+    background: #414141;
+    font-weight: 300;
+    letter-spacing: 0.05em;
 }
 </style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><a target="_blank" href="https://github.com/gi-no/kotlin-is-like-typescript"><img id="fork-me" src="http://nilhcem.github.io/swift-is-like-kotlin/fork-me.png"></a><div id="note">Kotlin is like TypeScript</div><div class="section"><div class="title">BASICS</div><div class="case"><div class="name">Hello World</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>println("Hello, world!")
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>console.log("Hello, world!");
@@ -219,7 +219,18 @@ occupations["Jayne"] = "Public Relations"
     "Kaylee": "Mechanic",
 };
 occupations["Jayne"] = "Public Relations";
-</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String>()
+</code></pre></div></div></div><div class="case"><div class="name">Tuple</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>// data class as Tuple in Kotlin
+data class GasPrices(val a: Double, val b: Double, val c: Double)
+
+fun main7() {
+    val price = GasPrices(3.59, 3.69, 3.79)
+    val (a, b, _) = price
+}</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>type GasPrices = [number, number, number]
+
+function main4() {
+    let price: GasPrices = [3.59, 3.69, 3.79]
+    let [a, b, c] = price;
+}</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String>()
 val emptyMap = mapOf&lt;String, Float>()
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>const emptyArray: string[];
 const emptyDictionary: {[key: string]: number};
@@ -231,12 +242,6 @@ greet("Bob", "Tuesday")
     return `Hello ${name}, today is ${day}.`
 }
 greet("Bob", "Tuesday");
-</code></pre></div></div></div><div class="case"><div class="name">Tuple Return</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>data class GasPrices(val a: Double, val b: Double,
-     val c: Double)
-fun getGasPrices() = GasPrices(3.59, 3.69, 3.79)
-</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>function getGasPrices(): [number, number, number] {
-    return [3.59, 3.69, 3.79];
-}
 </code></pre></div></div></div><div class="case"><div class="name">Variable Number Of Arguments</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun sumOf(vararg numbers: Int): Int {
     var sum = 0
     for (number in numbers) {
@@ -496,7 +501,37 @@ class Greeter {
     greet() {
         return "Hello, " + this.greeting;
     }
-}</code></pre></div></div></div></div><div class="section"><div class="title">Async</div><div class="case"><div class="name">Coroutines/Promise</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>suspend fun findNickById(id: Int): String {
+}</code></pre></div></div></div><div class="case"><div class="name">Object as Function</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class Config {
+    operator fun invoke(): String {
+        return "invoke"
+    }
+}
+
+fun main5() {
+    val config = Config()
+    println(config())
+}</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>interface Counter {
+    (start: number): string;
+
+    interval: number;
+
+    reset(): void;
+}
+
+function getCounter(): Counter {
+    let counter = (function (start: number) {
+        console.log("start")
+    }) as Counter;
+    counter.interval = 123;
+    counter.reset = function () {
+    };
+    return counter;
+}
+
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;</code></pre></div></div></div></div><div class="section"><div class="title">Async</div><div class="case"><div class="name">Coroutines/Promise</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>suspend fun findNickById(id: Int): String {
     return "nick $id"
 }
 
