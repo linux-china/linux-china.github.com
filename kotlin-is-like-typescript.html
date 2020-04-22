@@ -113,7 +113,9 @@ val widthLabel = label + width
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>const label = "The width is ";
 const width = 94;
 const widthLabel = label + width;
-</code></pre></div></div></div><div class="case"><div class="name">Equality</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>//Structural Equality (‘==’), Referential equality (‘===’), .equals method
+</code></pre></div></div></div><div class="case"><div class="name">Type Aliases</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>typealias Name = String;
+typealias NameResolver = () -> String;</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>type Name = string;
+type NameResolver = () => string;</code></pre></div></div></div><div class="case"><div class="name">Equality</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>//Structural Equality (‘==’), Referential equality (‘===’), .equals method
 data class User(val id: Int, val nick: String)
 
 fun testEquals() {
@@ -451,8 +453,8 @@ fun f&lt;T: Nameable>(x: T) {
     println("Name is " + x.name())
 }
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>interface Nameable {
-    name():string;
-};
+    name(): string;
+}
 
 function f(x: Nameable) {
     console.log("Name is " + x.name());
@@ -531,7 +533,65 @@ function getCounter(): Counter {
 let c = getCounter();
 c(10);
 c.reset();
-c.interval = 5.0;</code></pre></div></div></div></div><div class="section"><div class="title">Async</div><div class="case"><div class="name">Coroutines/Promise</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>suspend fun findNickById(id: Int): String {
+c.interval = 5.0;</code></pre></div></div></div><div class="case"><div class="name">Indexed operator/Indexable Types</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>//Indexed access operator
+class StringArray {
+    operator fun get(index: Int): String {
+        return ""
+    }
+
+    operator fun set(index: Int, value: String) {
+
+    }
+
+    operator fun get(index: String): String {
+        return ""
+    }
+
+    operator fun set(index: String, value: String) {
+
+    }
+}
+
+fun main8() {
+    val stringArray = StringArray()
+    stringArray[0]
+    stringArray["first"] = "second"
+}</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>//Indexed access operator
+class StringArray {
+    operator fun get(index: Int): String {
+        return ""
+    }
+
+    operator fun set(index: Int, value: String) {
+
+    }
+
+    operator fun get(index: String): String {
+        return ""
+    }
+
+    operator fun set(index: String, value: String) {
+
+    }
+}
+
+fun main8() {
+    val stringArray = StringArray()
+    stringArray[0]
+    stringArray["first"] = "second"
+}</code></pre></div></div></div><div class="case"><div class="name">Generics</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>interface Consumer<T> {
+    fun accept(obj: T)
+}
+
+fun <T> singletonList(item: T): List<T> {
+    return listOf(item)
+}</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>interface Consumer<T> {
+    fun accept(obj: T)
+}
+
+fun <T> singletonList(item: T): List<T> {
+    return listOf(item)
+}</code></pre></div></div></div></div><div class="section"><div class="title">Async</div><div class="case"><div class="name">Coroutines/Promise</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>suspend fun findNickById(id: Int): String {
     return "nick $id"
 }
 
