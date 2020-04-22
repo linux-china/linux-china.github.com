@@ -46,12 +46,6 @@ social_media:
    website: http://rsocketbyexample.info/
   # youtube: your_username
 
-pinnedProjects:
-  - names:
-      - alibaba-rsocket-broker
-      - awesome-rsocket
-      - zipkin-rsocket-server
-
 topics:
   - name: Reactive/RSocket
     web_url: http://rsocket.io/
