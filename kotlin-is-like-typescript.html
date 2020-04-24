@@ -770,7 +770,21 @@ fun hello(name: String): String {
     return "Hello name"
 }</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>export function hello(name: string): string {
     return `Hello ${name}!`
-}</code></pre></div></div></div></div><div class="section"><div class="title">Tools/Library</div><div class="case"><div class="name">Tools</div><div class="pair"><div class="card"><div class="lang">markdown</div><pre class="code"><code>### Kotlin Tools
+}</code></pre></div></div></div></div><div class="section"><div class="title">Tools/Library</div><div class="case"><div class="name">Unit Test</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>// testImplementation(kotlin("test-js")) in build.gradle.ts
+import kotlin.test.Test
+import kotlin.test.assertEquals
+
+class DemoTest {
+    @Test
+    fun testBar() {
+        console.log("Hello World!")
+        assertEquals(4, 2 * 2)
+    }
+}
+</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>// jest, ts-jest
+test("hello test", () => {
+    console.log("hello test");
+});</code></pre></div></div></div><div class="case"><div class="name">Tools</div><div class="pair"><div class="card"><div class="lang">markdown</div><pre class="code"><code>### Kotlin Tools
 * Gradle: project build tool with dev server support
 * dukat: Convert declarations(d.ts) to Kotlin external declarations</code></pre></div><div class="card"><div class="lang">markdown</div><pre class="code"><code>### TypeScript Tools
 * npm/yarn: project build tool
