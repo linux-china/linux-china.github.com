@@ -188,11 +188,15 @@ for(let index of _.range(1, 6)) {
 // 3 times 5 is 15
 // 4 times 5 is 20
 // 5 times 5 is 25
-</code></pre></div></div></div></div><div class="section"><div class="title">COLLECTIONS</div><div class="case"><div class="name">Arrays/List</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val shoppingList = arrayOf("catfish", "water",
-    "tulips", "blue paint")
-shoppingList[1] = "bottle of water"
-val freezeList = listOf("first", "second", "third")
-val mutableList = mutableListOf("first", "second", "third")
+</code></pre></div></div></div></div><div class="section"><div class="title">COLLECTIONS</div><div class="case"><div class="name">Arrays/List</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main12() {
+    val shoppingList = arrayOf(
+        "catfish", "water",
+        "tulips", "blue paint"
+    )
+    shoppingList[1] = "bottle of water"
+    val freezeList = listOf("first", "second", "third")
+    val mutableList = mutableListOf("first", "second", "third")
+}
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>let shoppingList = ["catfish", "water",
     "tulips", "blue paint"];
 shoppingList[1] = "bottle of water";
@@ -232,7 +236,27 @@ fun main7() {
 function main4() {
     let price: GasPrices = [3.59, 3.69, 3.79]
     let [a, b, c] = price;
-}</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String>()
+}</code></pre></div></div></div><div class="case"><div class="name">Filter/Map/Reduce</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main13() {
+    val shoppingList = arrayOf("catfish", "water", "tulips", "blue paint")
+    shoppingList.filter { it.startsWith("c") }
+        .map { it.length }
+        .reduce { acc, i -> acc + i }
+
+    shoppingList.filter { it.startsWith("c") }
+        .forEach(::println)
+}</code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>let shoppingList2 = ["catfish", "water", "tulips", "blue paint"];
+
+shoppingList2
+    .filter(item => item.startsWith("c"))
+    .map(item => item.length)
+    .reduce((acc, item) => acc + item)
+
+shoppingList2
+    .filter(item => item.startsWith("c"))
+    .forEach(item => {
+        console.log(item)
+    })
+</code></pre></div></div></div><div class="case"><div class="name">Empty Collections</div><div class="pair"><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val emptyArray = arrayOf&lt;String>()
 val emptyMap = mapOf&lt;String, Float>()
 </code></pre></div><div class="card"><div class="lang">TypeScript</div><pre class="code"><code>const emptyArray: string[];
 const emptyDictionary: {[key: string]: number};
